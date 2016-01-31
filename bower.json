@@ -1,0 +1,11 @@
+{
+  "name": "todo-jasmine",
+  "dependencies": {
+    "requirejs": "latest",
+    "jquery": "latest",
+    "knockout.js": "latest",
+    "font-awesome": "latest",
+    "knockout.validation": "latest",
+    "bootbox": "latest"
+  }
+}
