@@ -5,5 +5,6 @@
 $ git clone
 $ cd KOApp
 $ npm install
+$ bower install
 $ node app/app.js
 '''

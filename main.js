@@ -1,9 +1,11 @@
 //SetUp
 var express = require('express');
 var app = express();
+var favicon = require('serve-favicon');
 
 //Middleware Config
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/app'));
+app.use(favicon(__dirname + '/app/favicon.ico'));
 
 //Routes
 // require('./app/assets/js/routes.js')(app)
