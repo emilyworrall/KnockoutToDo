@@ -6,5 +6,5 @@ $ git clone https://github.com/danielstpaul/ToDoKo.git
 $ cd ToDoKo
 $ npm install
 $ bower install
-$ node app/app.js
+$ node main.js
 ```
