@@ -10,9 +10,9 @@ $ node server.js
 ```
 ##User Stories:
 ```
-- New task is added when ENTER key is pressed.
-- Task can be completed.
-- Task can be removed.
+<!-- - New task is added when ENTER key is pressed. -->
+<!-- - Task can be completed. -->
+<!-- - Task can be removed. -->
 - Task can be edited.
 - All completed tasks can be removed at once.
 - User can cancel an edit by pressing ESC.

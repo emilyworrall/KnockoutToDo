@@ -19,7 +19,12 @@
       <section id=todo-list data-bind="visible: todos().length">
         <ul data-bind="foreach: todos">
           <li>
-            <label data-bind="text: title"></label>
+            <div class="task-view">
+              <label data-bind="visible: !editing(), text: title, click: $root.editToDo"></label>
+              <input data-bind="visible: editing, value: title, valueUpdate: 'afterkeydown', hasFocus: editing, enterKey: $root.confirmEdit, escapeKey: $root.cancelEdit">
+              <input class="toggle" data-bind="checked: completed" type="checkbox">
+              <button class="delete" data-bind="click: $root.remove">X</button>
+            </div>
           </li>
         </ul>
       </section>
