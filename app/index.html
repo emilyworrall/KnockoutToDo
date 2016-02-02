@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="KnockoutJS ToDo App with RequireJS">
     <title>ToDo</title>
+    <script data-main="assets/js/init" src="bower_components/requirejs/require.js"></script>
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   </head>
@@ -13,9 +14,13 @@
     <section id="todo">
       <header>
         <h1>ToDo KnockoutJS ft. RequireJS</h1>
+        <input id="new-todo" data-bind="value: current, valueUpdate: 'afterkeydown', enterKey: add" placeholder="Enter new task" autofocus>
       </header>
-      <section id=todo-list>
-        <ul>
+      <section id=todo-list data-bind="visible: todos().length">
+        <ul data-bind="foreach: todos">
+          <li>
+            <label data-bind="text: title"></label>
+          </li>
         </ul>
       </section>
       <footer>
@@ -24,9 +29,8 @@
     <footer>
     </footer>
 
-    <script src="bower_components/knockout.js/knockout.js"></script>
+    <!-- <script src="bower_components/knockout.js/knockout.js"></script> -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/requirejs/require.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   </body>
