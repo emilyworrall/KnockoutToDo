@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="KnockoutJS ToDo App with RequireJS">
     <title>ToDo</title>
-    <script data-main="assets/js/init" src="bower_components/requirejs/require.js"></script>
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   </head>
@@ -16,25 +15,29 @@
         <h1>ToDo KnockoutJS ft. RequireJS</h1>
         <input id="new-todo" data-bind="value: current, valueUpdate: 'afterkeydown', enterKey: add" placeholder="Enter new task" autofocus>
       </header>
-      <section id=todo-list data-bind="visible: todos().length">
-        <ul data-bind="foreach: todos">
-          <li>
-            <div class="task-view">
-              <label data-bind="visible: !editing(), text: title, click: $root.editToDo"></label>
-              <input data-bind="visible: editing, value: title, valueUpdate: 'afterkeydown', hasFocus: editing, enterKey: $root.confirmEdit, escapeKey: $root.cancelEdit">
-              <input class="toggle" data-bind="checked: completed" type="checkbox">
-              <button class="delete" data-bind="click: $root.remove">X</button>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <footer>
-      </footer>
+    </section>
+    <section id=todo-list data-bind="visible: todos().length">
+      <ul data-bind="foreach: todos">
+        <li>
+          <div class="task-view">
+            <label data-bind="visible: !editing(), text: title, click: $root.editToDo"></label>
+            <input data-bind="visible: editing, value: title, valueUpdate: 'afterkeydown', hasFocus: editing, enterKey: $root.confirmEdit, escapeKey: $root.cancelEdit">
+            <input class="toggle" data-bind="checked: completed" type="checkbox">
+            <button class="delete" data-bind="click: $root.remove">X</button>
+          </div>
+        </li>
+      </ul>
     </section>
     <footer>
+      <div class="container">
+        <h2>Available for iPhone and Android.</h2>
+        <img src="https://s3.amazonaws.com/codecademy-content/projects/shutterbugg/app-store.png" width="120px" />
+        <img src="https://s3.amazonaws.com/codecademy-content/projects/shutterbugg/google-play.png" width="110px" />
+        <p>Copyright (c) 2015</p>
+      </div>
     </footer>
 
-    <!-- <script src="bower_components/knockout.js/knockout.js"></script> -->
+    <script data-main="assets/js/init" src="bower_components/requirejs/require.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
