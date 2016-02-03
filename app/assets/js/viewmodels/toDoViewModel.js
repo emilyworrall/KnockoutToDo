@@ -56,6 +56,37 @@ define(['knockout', 'config', 'models/toDo'], function(ko, config, toDo) {
         self.todos.remove(todo);
       };
 
+      // Remove all completed tasks
+      self.removeCompleted = function() {
+        self.todos.remove(function(todo) {
+          return todo.completed();
+        });
+      };
+
+      // Total count of completed todos
+      self.completedCount = ko.computed(function() {
+        return ko.utils.arrayFilter(self.todos(), function(todo) {
+          return todo.completed();
+        }).length;
+      });
+
+      // Total count of incomplete todos
+      self.remainingCount = ko.computed(function() {
+        return self.todos().length - self.completedCount();
+      });
+
+      // Can mark all tasks complete/incomplete
+      self.allCompleted = ko.computed({
+        read: function() {
+          return !self.remainingCount();
+        },
+        write: function(newValue) {
+          ko.utils.arrayForEach(self.todos(), function(todo) {
+            todo.completed(newValue);
+          });
+        }
+      });
+
       ko.computed(function() {
         window.localStorage.setItem(config.localStorageItem, ko.toJSON(self.todos));
       }).extend({
